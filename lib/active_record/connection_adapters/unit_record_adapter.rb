@@ -81,6 +81,10 @@ class ActiveRecord::ConnectionAdapters::UnitRecordAdapter < ::ActiveRecord::Conn
     raise_or_noop
   end
   
+  def primary_key name
+    raise_or_noop
+  end
+
   def tables
     @cached_columns.keys
   end

@@ -13,7 +13,7 @@ when 3
 end
 
 if Rails::VERSION::MAJOR == 3
-  # todo
+  # No need to test routing/controller in rails 3. Nothing to do with the DB.
 elsif Rails::VERSION::MAJOR == 2
 
   class ControllerTest < ActionController::TestCase

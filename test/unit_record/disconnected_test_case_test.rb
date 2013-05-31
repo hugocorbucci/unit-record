@@ -1,10 +1,13 @@
 require File.dirname(__FILE__) + "/../test_helper"
 
 functional_tests do
-  test "use_transactional_fixtures is false" do
-    assert_equal false, UnitRecord.base_rails_test_class.use_transactional_fixtures
+
+  if Rails::VERSION::STRING < "3.0.0"
+    test "use_transactional_fixtures is false" do
+      assert_equal false, UnitRecord.base_rails_test_class.use_transactional_fixtures
+    end
   end
-  
+
   test "trying to use fixtures gives useful message" do
     exception = nil
     begin

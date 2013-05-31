@@ -15,7 +15,7 @@ module UnitRecord
       ActiveRecord::Migration.verbose = false
       ActiveRecord::Base.connection.change_strategy(:noop) do
         rails_root = Rails.respond_to?(:root) ? Rails.root : RAILS_ROOT
-        load(rails_root + "/db/schema.rb")
+        load(File.join(rails_root, 'db', 'schema.rb'))
       end
     end
   end
